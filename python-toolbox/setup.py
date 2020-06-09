@@ -46,7 +46,7 @@ TOPIC = 'Topic :: Software Development :: Libraries :: Python Modules',
 # External dependencies
 # More info https://pythonhosted.org/setuptools/setuptools.html#declaring-dependencies
 REQUIREMENTS_EXTERNAL = [
-    'six>=1.10.0',
+    'six>=1.14.0',
     'bumpversion>=0.5.3',
     'click>=3.3',
     'jupyter>=1.0.0',
@@ -58,7 +58,7 @@ REQUIREMENTS_EXTERNAL = [
     'paramiko>=2.1.2',
     'PyHive>=0.3.0',
     'thrift>=0.10.0',
-    'thrift-sasl>=0.2.1',
+    'thrift-sasl==0.3.0',
     'virtualenvwrapper>=4.7.1',
     'requests>=2.19.1',
     'python-dateutil>=2.7.3',
@@ -82,6 +82,8 @@ REQUIREMENTS_EXTERNAL = [
     'idna>=2.5',
     'bleach>=1.5.0',
     'numpy>=1.16.2',
+    'google-cloud-bigquery>=1.21',
+    'pandas>=0.24'
 ]
 
 # Test dependencies
