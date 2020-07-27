@@ -54,6 +54,7 @@ matrix:
       install:
         - travis_retry pip install codecov
         - travis_retry pip install unidecode
+        - travis_retry pip install tox
         - make install
       script:
         - tox
@@ -79,6 +80,7 @@ matrix:
       install:
         - travis_retry pip install codecov
         - travis_retry pip install unidecode
+        - travis_retry pip install tox
         - make install
       script:
         - tox
