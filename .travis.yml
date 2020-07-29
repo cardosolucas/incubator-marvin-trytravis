@@ -87,5 +87,5 @@ matrix:
         - travis_retry pip install tox
         - make install
       script:
-        - tox
+        - travis-wait 30 tox
         - codecov
