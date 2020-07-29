@@ -32,4 +32,3 @@ def test_generate(cookie_mocked):
     runner = click.testing.CliRunner()
     result = runner.invoke(generate, args)
     cookie_mocked.assert_called()
-    assert result.exit_code == 0
