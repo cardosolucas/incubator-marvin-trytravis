@@ -86,6 +86,7 @@ matrix:
         - travis_retry pip install unidecode
         - travis_retry pip install tox
         - make install
+        - marvin
       script:
         - travis_wait 30 tox
         - codecov
