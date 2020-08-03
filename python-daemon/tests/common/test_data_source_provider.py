@@ -68,7 +68,8 @@ class TestDataSourceProvider:
 
 class TestSparkDataSource(unittest.TestCase):
     def test_spark_initialization(self):
-        rdd = self.sc.parallelize(['Hi there', 'Hi'])
+        sc = get_spark_session()
+        rdd = sc.parallelize(['Hi there', 'Hi'])
         counted = rdd.flatMap(lambda word: word.split(' ')).map(
             lambda word: (word, 1)).reduceByKey(lambda acc, n: acc + n)
         assert counted.collectAsMap() == {'Hi': 2, 'there': 1}
