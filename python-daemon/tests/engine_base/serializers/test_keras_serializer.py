@@ -32,11 +32,13 @@ def engine():
 
 class TestKerasSerializer(object):
     @mock.patch('tensorflow.keras.models.load_model')
-    def test__serializer_load_keras(self, mocked_load, engine):
+    @mock.patch('h5py.File')
+    def test__serializer_load_keras(self, mocked_load, mocked_file, engine):
         mocked_load.return_value = {"me": "here"}
         mocked_path = "/tmp/engine/model"
         obj = engine._serializer_load(object_file_path=mocked_path)
         mocked_load.assert_called_once_with(mocked_path)
+        mocked_file.assert_called()
         assert obj == {"me": "here"}
 
     @mock.patch('joblib.load')
