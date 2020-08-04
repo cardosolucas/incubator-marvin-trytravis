@@ -35,7 +35,7 @@ def engine():
 class TestKerasSerializer(object):
     @mock.patch('tensorflow.keras.models.load_model')
     def test__serializer_load_keras(self, mocked_load, engine):
-        mocked_path = os.path.join(os.environ['MARVIN_DATA_PATH'], model)
+        mocked_path = os.path.join(os.environ['MARVIN_DATA_PATH'], 'model')
         a = keras.layers.Input(shape=(2,))
         x = keras.layers.Dense(3)(a)
         b = keras.layers.Dense(1)(x)
