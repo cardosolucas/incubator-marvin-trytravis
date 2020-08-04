@@ -18,6 +18,7 @@
 import mock
 import pytest
 
+from tensorflow import keras
 from marvin_python_daemon.engine_base import EngineBaseTraining
 from marvin_python_daemon.engine_base.serializers.keras_serializer import KerasSerializer
 
