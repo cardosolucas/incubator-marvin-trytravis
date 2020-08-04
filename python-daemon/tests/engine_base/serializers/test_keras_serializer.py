@@ -14,7 +14,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
+)
+import os
 import mock
 import pytest
 
@@ -34,7 +35,7 @@ def engine():
 class TestKerasSerializer(object):
     @mock.patch('tensorflow.keras.models.load_model')
     def test__serializer_load_keras(self, mocked_load, engine):
-        mocked_path = "/tmp/engine/model"
+        mocked_path = os.environ['MARVIN_DATA_PATH']
         a = keras.layers.Input(shape=(2,))
         x = keras.layers.Dense(3)(a)
         b = keras.layers.Dense(1)(x)
