@@ -32,7 +32,7 @@ def engine():
 
 class TestKerasSerializer(object):
     @mock.patch('tensorflow.keras.models.load_model')
-    @mock.patch('h5py.File')
+    @mock.patch('tensorflow.python.keras.saving.hdf5_format.load_model_from_hdf5')
     def test__serializer_load_keras(self, mocked_load, mocked_file, engine):
         mocked_load.return_value = {"me": "here"}
         mocked_path = "/tmp/engine/model"
