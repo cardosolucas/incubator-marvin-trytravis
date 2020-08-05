@@ -33,8 +33,7 @@ def engine():
 
 
 class TestKerasSerializer(object):
-    @mock.patch('tensorflow.keras.models.load_model')
-    def test__serializer_load_keras(self, mocked_load, engine):
+    def test__serializer_load_keras(self, engine):
         mocked_path = os.path.join(os.environ['MARVIN_DATA_PATH'], 'model')
         a = keras.layers.Input(shape=(2,))
         x = keras.layers.Dense(3)(a)
@@ -42,11 +41,8 @@ class TestKerasSerializer(object):
         model = keras.models.Model(a, b)
         model.save(mocked_path)
         
-        mocked_load.return_value = {"me": "here"}
         obj = engine._serializer_load(object_file_path=mocked_path)
-        mocked_load.assert_called_once_with(mocked_path)
-        mocked_file.assert_called()
-        assert obj == {"me": "here"}
+        assert isinstance(obj, keras.models.Model)
 
     @mock.patch('joblib.load')
     def test__serializer_load_not_keras(self, mocked_load, engine):
