@@ -29,8 +29,8 @@ PACKAGE_DESCRIPTION = 'Apache Marvin-AI CLI'
 
 URL = ''
 
-AUTHOR_NAME = 'Lucas Cardoso'
-AUTHOR_EMAIL = 'marvin@apache.org'
+AUTHOR_NAME = 'Apache Marvin-AI Community'
+AUTHOR_EMAIL = 'dev@marvin.apache.org'
 
 PYTHON_2 = False
 PYTHON_3 = True
